@@ -29,20 +29,20 @@ mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost identified by "
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
 mv conf.txt /etc/apache2/sites-available/000-default.conf
-rm /var/www/html/index.html
 
 #Redemarage d'apache2
 systemctl restart apache2 
 
 #Installation de glpi
-cd /usr/src
+cd /tmp
 wget https://github.com/glpi-project/glpi/releases/download/9.5.2/glpi-9.5.2.tgz
 tar -xvzf glpi-9.5.2.tgz
+rm /var/www/html/index.html
 cp -r glpi/* /var/www/html/
 
 #Droit pour glpi
-chown -R www-data /var/www/html/glpi/
-chmod -R 775 /var/www/html/glpi
+chown -R www-data /var/www/html
+chmod -R 775 /var/www/html
 
 #Lien glpi
-echo "http://localhost/glpi"
+echo "http://localhost"
