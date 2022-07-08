@@ -23,8 +23,8 @@ systemctl restart apache2
 systemctl restart mariadb
 
 #Creation de la base de donnee
-mysql -e 'CREATE DATABASE glpidb'
-mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost identified by "MDP"'
+mysql -e 'create database db_glpi'
+mysql -e 'grant all privileges on db_glpi.* to admindb_glpi@localhost identified by "MDP"'
 
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
@@ -49,6 +49,6 @@ echo "
 http://localhost
 
 SQL server : localhost
-SQL user : admindb_glpi
+SQL user : adminglpidb
 SQL password : MDP
 "
