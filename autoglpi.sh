@@ -22,9 +22,14 @@ apt install perl -y
 systemctl restart apache2 
 systemctl restart mariadb
 
+clear
+
+echo "mot de passe ? :"
+read mdp
+
 #Creation de la base de donnee
 mysql -e 'create database db_glpi'
-mysql -e 'grant all privileges on db_glpi.* to admindb_glpi@localhost identified by "MDP"'
+mysql -e 'grant all privileges on db_glpi.* to admindb_glpi@localhost identified by '$mdp''
 
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
@@ -50,5 +55,5 @@ http://localhost
 
 SQL server : localhost
 SQL user : admindb_glpi
-SQL password : MDP
+SQL password : $mdp
 "
