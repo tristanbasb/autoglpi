@@ -49,6 +49,6 @@ echo "
 http://localhost
 
 SQL server : localhost
-SQL user : adminglpidb
+SQL user : admindb_glpi
 SQL password : MDP
 "
