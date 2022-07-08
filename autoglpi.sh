@@ -23,13 +23,10 @@ systemctl restart mariadb
 mysql -e 'CREATE DATABASE glpidb'
 mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost identified by "mdp"'
 
-#Installation de phpmyadmin
-echo "Souhaitez vous avoir phpmyadmin ? :"
-read reponse
-
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
 mv conf.txt /etc/apache2/sites-available/000-default.conf
+rm /var/www/html/index.html
 
 #Redemarage d'apache2
 systemctl restart apache2 
