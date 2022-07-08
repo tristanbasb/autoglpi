@@ -7,7 +7,7 @@ apt-get update && apt-get upgrade -y
 apt-get install apache2 php libapache2-mod-php -y
 
 #Installation de PHP
-apt-get install php-mysqli php-mbstring php-curl php-gd php-simplexml php-intl php-ldap php-apcu php-xmlrpc php-cas php-zip php-bz2 php-ldap php-imap -y -y
+apt-get install php-mysqli php-mbstring php-curl php-gd php-simplexml php-intl php-ldap php-apcu php-xmlrpc php-cas php-zip php-bz2 php-ldap php-imap -y
  
 #Installation de Mariadb
 apt-get install mariadb-server -y
