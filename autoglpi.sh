@@ -15,6 +15,9 @@ apt-get install mariadb-server -y
 #Installation des modules complementaire
 apt-get install apcupsd php-apcu -y
 
+#Installation de perl
+apt install perl -y
+
 #Redemarage des services
 systemctl restart apache2 
 systemctl restart mariadb
