@@ -24,8 +24,7 @@ systemctl restart mariadb
 
 #Creation de la base de donnee
 mysql -e 'CREATE DATABASE glpidb'
-mysql -e 'create user glpiuser@localhost identified by "mdp"'
-mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost'
+mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost identified by "MDP"'
 
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
@@ -37,8 +36,9 @@ systemctl restart apache2
 
 #Installation de glpi
 cd /usr/src
-wget https://github.com/glpi-project/glpi/releases/download/9.3.3/glpi-9.3.3.tgz
-tar -xvzf glpi-9.3.3.tgz -C /var/www/html
+wget https://github.com/glpi-project/glpi/releases/download/9.5.2/glpi-9.5.2.tgz
+tar -xvzf glpi-9.5.2.tgz
+cp -r glpi/* /var/www/html/
 
 #Droit pour glpi
 chown -R www-data /var/www/html/glpi/
