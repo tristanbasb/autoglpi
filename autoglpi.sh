@@ -7,7 +7,7 @@ apt-get update && apt-get upgrade -y
 apt-get install apache2 php libapache2-mod-php -y
 
 #Installation de PHP
-apt-get install php-imap php-ldap php-curl php-xmlrpc php-gd php-mysql php-cas php-simplexml php-mbstring -y
+apt-get install php-mysqli php-mbstring php-curl php-gd php-simplexml php-intl php-ldap php-apcu php-xmlrpc php-cas php-zip php-bz2 php-ldap php-imap -y -y
  
 #Installation de Mariadb
 apt-get install mariadb-server -y
@@ -26,11 +26,6 @@ mysql -e 'grant all privileges on glpidb.* to glpiuser@localhost identified by "
 #Installation de phpmyadmin
 echo "Souhaitez vous avoir phpmyadmin ? :"
 read reponse
-
-if [ "$reponse" == "oui" ]
-then
-    apt-get install phpmyadmin
-fi
 
 #Modification du fichier de configuration d'apache
 rm /etc/apache2/sites-available/000-default.conf
