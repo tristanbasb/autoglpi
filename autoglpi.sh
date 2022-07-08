@@ -45,4 +45,10 @@ chown -R www-data /var/www/html
 chmod -R 775 /var/www/html
 
 #Lien glpi
-echo "http://localhost"
+echo "
+http://localhost
+
+SQL server : localhost
+SQL user : admindb_glpi
+SQL password : MDP
+"
