@@ -35,8 +35,8 @@ systemctl restart apache2
 
 #Installation de glpi
 cd /tmp
-wget https://github.com/glpi-project/glpi/releases/download/9.5.2/glpi-9.5.2.tgz
-tar -xvzf glpi-9.5.2.tgz
+wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
+tar -xvzf glpi-10.0.2.tgz
 rm /var/www/html/index.html
 cp -r glpi/* /var/www/html/
 
